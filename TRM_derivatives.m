@@ -112,5 +112,4 @@ ddTs_2nd_dalbedo_dra = diff(diff(Ts_2nd, albedo, 1), ra, 1);
 ddTs_2nd_dra_drs     = diff(diff(Ts_2nd, ra, 2), rs, 1);
 ddTs_2nd_drs_dalebdo = diff(diff(Ts_2nd, rs, 1), albedo, 1);
 
-
-stop=1;
+%end
