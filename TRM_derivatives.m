@@ -1,5 +1,5 @@
 % MATLAB R2019b
-% Dated: April-10-2020
+% Dated: July-28-2020
 % Author: Chi Chen @ Boston University
 % Email: chenchi@bu.edu
 
@@ -26,6 +26,7 @@ clc
 % Lv      latent heat vaporization                    2.4665x10^6 J kg^(-1)
 %      or latent heat of sublimation                  2.8002x10^6 J kg^(-1)
 % sigma   Stefan-Boltzmann constant        5.670367x10^(-8) W m^(-2) K^(-4)
+% Rwa     Ratio molecular weight of water vapor/dry air               0.622
 
 %% parameters
 % albedo  albedo                                              dimensionless
@@ -54,17 +55,17 @@ clc
 % r0
 % Rn_star
 
-syms Cp Lv sigma % constants
+syms Cp Lv sigma Rwa% constants
 syms albedo emis e_sat G Lin P qa q_sat rhoa ra rs Sin Ta Ts % parameters
 syms delta gamma f lambda0prime r0 Rn_star a b c % shortcuts
 
 %% FOTSE LST model, i.e., Ts_1st
-e_sat = 611*exp(17.27*(273.15-Ta)/(Ta-35.85)); % (Dingman, 2008)
-q_sat = 0.622 / P * e_sat;
+% In the paper: e_sat = 611*exp(17.27*(273.15-Ta)/(Ta-35.85)); % (Dingman, 2008)
+q_sat = Rwa / P * e_sat;
 
 % define shortcuts
 delta        = diff(e_sat, Ta,1);
-gamma        = (Cp*P)/(0.622*Lv);
+gamma        = (Cp*P)/(Rwa*Lv);
 lambda0prime = 1/(rhoa*Cp);
 r0           = rhoa*Cp/(4*emis*sigma*Ta^3);
 Rn_star      = Sin*(1-albedo) + emis*Lin -emis*sigma*Ta^4;
@@ -83,9 +84,9 @@ ddTs_1st_ddalbedo = diff(Ts_1st, albedo, 2);
 ddTs_1st_ddra     = diff(Ts_1st, ra, 2);
 ddTs_1st_ddrs     = diff(Ts_1st, rs, 2);
 
-% degree-2 cross-order derivatives for FOTSE LST model
+% degree 2 cross-order derivatives for FOTSE LST model
 ddTs_1st_dalbedo_dra = diff(diff(Ts_1st, albedo, 1), ra, 1);
-ddTs_1st_dra_drs     = diff(diff(Ts_1st, ra, 1), rs, 1);
+ddTs_1st_dra_drs     = diff(diff(Ts_1st, ra, 2), rs, 1);
 ddTs_1st_drs_dalebdo = diff(diff(Ts_1st, rs, 1), albedo, 1);
 
 %% SOTSE LST model, i.e., Ts_2nd
@@ -107,9 +108,9 @@ ddTs_2nd_ddalbedo = diff(Ts_2nd, albedo, 2);
 ddTs_2nd_ddra     = diff(Ts_2nd, ra, 2);
 ddTs_2nd_ddrs     = diff(Ts_2nd, rs, 2);
 
-% degree-2 cross-order derivatives for FOTSE LST model
+% degree 2 cross-order derivatives for FOTSE LST model
 ddTs_2nd_dalbedo_dra = diff(diff(Ts_2nd, albedo, 1), ra, 1);
-ddTs_2nd_dra_drs     = diff(diff(Ts_2nd, ra, 1), rs, 1);
+ddTs_2nd_dra_drs     = diff(diff(Ts_2nd, ra, 2), rs, 1);
 ddTs_2nd_drs_dalebdo = diff(diff(Ts_2nd, rs, 1), albedo, 1);
 
-%end
+% END
