@@ -3,8 +3,6 @@ This script can be executed by MATLAB.
 
 Version: MATLAB R2019b
 
-Dated: April-10-2020
-
 Author: Chi Chen @ Boston University
 
 Email: chenchi@bu.edu
