@@ -1,5 +1,4 @@
 % MATLAB R2019b
-% Dated: July-28-2020
 % Author: Chi Chen @ Boston University
 % Email: chenchi@bu.edu
 
