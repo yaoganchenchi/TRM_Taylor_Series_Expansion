@@ -11,5 +11,5 @@ Email: chenchi@bu.edu
 
 This script provides the partial derivatives of Ts with respect to albedo, aerodynamic resistance and surface resistance. The Ts is analytically solved with first-order Taylor series expansion and second-order Taylor series expansion based on the land surface energy balance equation.
 
-Academic use ONLY, and please acknowledge the following paper:
+Please acknowledge the following paper:
 
