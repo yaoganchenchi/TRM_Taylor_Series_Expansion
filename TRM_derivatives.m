@@ -7,9 +7,10 @@
 % solved with first-order Taylor series expansion and second-order Taylor 
 % series expansion based on the land surface energy balance equation.
 
-% Please acknowledge the following paper:
-% Blank for the publication
-% Blank for the publication
+% Please cite the following paper:
+% Chen, C., Wang, L., Myneni, R. B., & Li, D. (2020). Attribution of land‐use/land‐cover change induced surface
+% temperature anomaly: How accurate is the first‐order Taylor series expansion? Journal of Geophysical Research: Biogeosciences,
+% 125, e2020JG005787. https://doi.org/10.1029/2020JG005787
 
 clear
 clc
