@@ -11,5 +11,4 @@ This script provides the partial derivatives of Ts with respect to albedo, aerod
 
 Please acknowledge the following paper:
 
-Chen, C.*, Wang, L., Myneni, R. B., & Li, D*. (2020). Attribution of land‐use/land‐cover change induced surface temperature anomaly: How accurate is the first‐order Taylor series expansion? Journal of Geophysical Research: Biogeosciences, 125, e2020JG005787. https://doi.org/10.1029/2020JG005787
-
+Chen, C., Wang, L., Myneni, R. B., & Li, D. (2020). Attribution of land‐use/land‐cover change induced surface temperature anomaly: How accurate is the first‐order Taylor series expansion? Journal of Geophysical Research: Biogeosciences, 125, e2020JG005787. https://doi.org/10.1029/2020JG005787
