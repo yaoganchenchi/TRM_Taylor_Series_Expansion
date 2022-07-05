@@ -86,7 +86,7 @@ ddTs_1st_ddrs     = diff(Ts_1st, rs, 2);
 
 % degree 2 cross-order derivatives for FOTSE LST model
 ddTs_1st_dalbedo_dra = diff(diff(Ts_1st, albedo, 1), ra, 1);
-ddTs_1st_dra_drs     = diff(diff(Ts_1st, ra, 2), rs, 1);
+ddTs_1st_dra_drs     = diff(diff(Ts_1st, ra, 1), rs, 1);
 ddTs_1st_drs_dalebdo = diff(diff(Ts_1st, rs, 1), albedo, 1);
 
 %% SOTSE LST model, i.e., Ts_2nd
@@ -110,7 +110,7 @@ ddTs_2nd_ddrs     = diff(Ts_2nd, rs, 2);
 
 % degree 2 cross-order derivatives for FOTSE LST model
 ddTs_2nd_dalbedo_dra = diff(diff(Ts_2nd, albedo, 1), ra, 1);
-ddTs_2nd_dra_drs     = diff(diff(Ts_2nd, ra, 2), rs, 1);
+ddTs_2nd_dra_drs     = diff(diff(Ts_2nd, ra, 1), rs, 1);
 ddTs_2nd_drs_dalebdo = diff(diff(Ts_2nd, rs, 1), albedo, 1);
 
 % END
