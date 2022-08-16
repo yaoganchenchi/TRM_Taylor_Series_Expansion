@@ -91,7 +91,7 @@ ddTs_1st_drs_dalebdo = diff(diff(Ts_1st, rs, 1), albedo, 1);
 
 %% SOTSE LST model, i.e., Ts_2nd
 % shortcuts
-a = 6*emis*sigma*Ta^2 + 1/2 * diff(q_sat,Ta,2) * rhoa*Lv/(ra + rs);
+a = 6*emis*sigma*Ta^2 + 1/2 * diff(q_sat,Ta,2) * rhoa*Lv/(ra+rs);
 b = 4*emis*sigma*Ta^3 + rhoa*Lv*diff(q_sat,Ta,1)/(ra+rs) + rhoa*Cp/ra;
 c = rhoa*Lv*(q_sat-qa)/(ra+rs) - (Rn_star-G);
 
